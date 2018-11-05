@@ -1,0 +1,44 @@
+#profile_img {
+	width: 150px;
+	height: 150px;
+	border-radius: 10em;
+	margin: 15px;
+}
+
+
+body {
+	text-align: center;
+	background-color: #424242;
+	
+
+}
+
+
+.header-div {
+	margin: 1%;
+	padding: 1%;
+	background-image: url("/media/mehran/240BCADA758C30EE/My Stuff/Projects/HTML-CSS/github-cv/mehran75.github.io/img/header_img.jpg");
+	background-repeat: repeat;
+	background-position: center center;
+
+}
+
+#header_img {
+	width: 100%;
+	height: 80%;
+	opacity: 0.2;
+}
+
+
+.block-div {
+	background-color: white;
+
+	margin: 1%;
+	padding: 1%;
+	text-align: left;
+
+}
+
+.block-header {
+	color: #00BCD4;
+}
