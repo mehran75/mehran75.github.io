@@ -1,0 +1,150 @@
+body {
+    background-color: #424242;
+}
+
+
+header {
+    height: 800px;
+    min-height: 500px;
+    width: 100%;
+    background: #0d0b0b url(../img/header-background.jpg) no-repeat top center;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    text-align: center;
+    overflow: hidden;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+/*nav menu*/
+/* nav-wrap */
+#nav-wrap {
+    font: 12px 'opensans-bold', sans-serif;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0 auto;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.opaque { background-color: #424242; }
+
+/* hide toggle button */
+#nav-wrap > a.mobile-btn { display: none; }
+
+ul#nav {
+    min-height: 48px;
+    width: auto;
+
+    /* center align the menu */
+    text-align: center;
+}
+ul#nav li {
+    position: relative;
+    list-style: none;
+    height: 48px;
+    display: inline-block;
+}
+
+/* Links */
+ul#nav li a {
+
+    /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
+
+    display: inline-block;
+    padding: 8px 13px;
+    line-height: 32px;
+    text-decoration: none;
+    text-align: left;
+    color: #fff;
+
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+
+ul#nav li a:active { background-color: transparent !important; }
+ul#nav li.current a { color: #26C6DA; }
+
+/*Profile Image*/
+
+#profile-image {
+    max-width: 200px;
+    max-height: 200px;
+
+    border-radius: 50%;
+
+    align-self: center;
+
+}
+
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: flex-start;
+
+    list-style-type: none;
+
+}
+
+.social li{
+    margin : .5%;
+}
+
+hr {
+    margin: 0 15% 0 15%;
+}
+
+
+a{
+    color: white;
+}
+
+header .block-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-color: rgba(33,33,33 ,.8);
+    margin: 0 10% 0 10% ;
+    padding: 1%;
+
+    color: white;
+}
+
+.block-div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+
+    background-color: #212121;
+    padding: 5% 12% 5% 12%;
+
+    color: white;
+}
+
+.section-title {
+    color: #26C6DA;
+}
+
+
+footer {
+
+    background-color: #212121;
+    padding: 5% 12% 5% 12%;
+
+    color: white;
+}
+
+

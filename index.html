@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head">
+<head>
     <meta charset="UTF-8">
-    <title>Mehran-rafiee</title>
+    <title>Mehran Rafiee</title>
 
-  <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/main_style.css"/>
+    <link rel="stylesheet" href="css/media_query.css"/>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
 
+<header id="home">
 
-	<div class="header-div">
+    <nav id="nav-wrap">
 
-<img src="img/my_img.jpg" alt="my image" id="profile_img"/>
+        <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+        <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-	 	<h1>Mehran rafiee</h1>
-	 	
-	</div>
+
+        <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#about">About</a></li>
+            <li><a class="smoothscroll" href="#education">Education</a></li>
+            <li><a class="smoothscroll" href="#employment">Employment</a></li>
+        </ul>
+    </nav>
 
 
     <div class="block-div">
 
-    	<h2 class="block-header">Summery</h3>
+        <img id="profile-image" src="img/my_img.jpg"/>
 
-    	<p>
-    		I Love AI:)
-    	</p>
-    	
+        <h1 class="responsive-headline">I'm Mehran Rafiee.</h1>
+
+        <h3>I'm a Computer engineering student and <span>Programmer</span>.
+            Currently I'm learning AI (Machine Learning, DeepLearning, NLP stuff and etc.).
+            Let's <a class="smoothscroll" href="#about">start scrolling</a>
+            and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+
+        <ul class="social">
+            <li><a href="#"><i class="fa fa-github"  style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"  style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin" style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"  style="font-size: 24px;"></i></a></li>
+        </ul>
     </div>
 
+
+</header>
+
+
+<div class="block-div" id="about">
+
+    <h3 class="section-title">Know me better :)</h3>
+
+
+</div>
+
+<hr/>
+
+
+<div class="block-div" id="education">
+
+    <h3 class="section-title">Education</h3>
+
+
+</div>
+
+<hr/>
+
+<div class="block-div" id="employment">
+
+    <h3 class="section-title">Employment history</h3>
+
+
+</div>
+
+<hr/>
+
+
+<footer>
+    <p>© Fill free to use</p>
+</footer>
+
 </body>
-
-
 </html>
