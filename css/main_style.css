@@ -1,3 +1,25 @@
+@media screen and (max-width: 600px) {
+    .nav a:not(:first-child) {display: none;}
+    .nav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav.responsive {position: relative;}
+    .nav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -5,8 +27,7 @@ html {
 body {
     background-color: #424242;
     background-image: url("../img/header_img.jpg");
-    background-size: cover !important;
-    -webkit-background-size: cover !important;
+    background-size: cover;
     background-attachment: fixed;
 
     margin: 0;
@@ -18,7 +39,6 @@ header {
     width: 100%;
     background: #141111 url(../img/header-background.jpg) no-repeat top center;
     background-size: cover;
-    -webkit-background-size: cover;
     text-align: center;
     overflow: hidden;
     position: relative;
@@ -29,69 +49,36 @@ header {
 
 }
 
-/*nav menu*/
-/* nav-wrap */
-#nav-wrap {
-    font: 12px 'opensans-bold', sans-serif;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    margin: 0 auto;
-    z-index: 100;
-    position: fixed;
-    left: 0;
-    top: 0;
-}
 
-.opaque {
-    background-color: #424242;
-}
 
-/* hide toggle button */
-#nav-wrap > a.mobile-btn {
-    display: none;
-}
-
-ul#nav {
+#nav {
     min-height: 48px;
     width: auto;
-
-    /* center align the menu */
     text-align: center;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
 }
 
-ul#nav li {
-    position: relative;
-    list-style: none;
-    height: 48px;
-    display: inline-block;
-}
-
-/* Links */
-ul#nav li a {
-
-    /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
-
-    display: inline-block;
-    padding: 8px 13px;
-    line-height: 32px;
+#nav a {
+    color: white;
     text-decoration: none;
-    text-align: left;
-    color: #fff;
 
-    -webkit-transition: color .2s ease-in-out;
-    -moz-transition: color .2s ease-in-out;
-    -o-transition: color .2s ease-in-out;
-    -ms-transition: color .2s ease-in-out;
-    transition: color .2s ease-in-out;
+    margin: 1%;
 }
 
-ul#nav li a:active {
-    background-color: transparent !important;
-}
-
-ul#nav li.current a {
+#nav a:hover {
     color: #26C6DA;
+}
+
+
+.active {
+    color: #26C6DA;
+}
+
+.nav .icon {
+    display: none;
 }
 
 /*Profile Image*/
@@ -123,30 +110,11 @@ ul#nav li.current a {
 
 hr {
     margin: 0 10% 0 10%;
+    background-color: revert;
 }
 
 a {
     color: white;
-}
-/* scrolldown link */
-header .scrolldown a {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    margin-left: -29px;
-    color: #fff;
-    display: block;
-    height: 42px;
-    width: 42px;
-    font-size: 42px;
-    line-height: 42px;
-    color: #fff;
-    border-radius: 100%;
-
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
 }
 
 /*block div*/
@@ -159,7 +127,7 @@ header .block-div {
     min-height: auto;
 
     background-color: rgba(33, 33, 33, .8);
-    margin: 0 10% 0 10%;
+    margin: 5% 10% 0 10%;
     padding: 1%;
 
     color: white;
@@ -216,6 +184,38 @@ header .block-div {
 .education-item img{
     width: 150px;
     height: 150px;
+    margin: 2%;
+}
+
+
+/*employment item*/
+.block-div#employment {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+/*Skill item*/
+.skill-item {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 2%;
+    width: 100%;
+}
+
+.skill-item progress {
+    width: 50%;
+
+}
+
+.skill-item p{
+    color: rgba(255, 255, 255, 0.51);
 }
 
 
