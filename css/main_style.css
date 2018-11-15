@@ -56,7 +56,7 @@ header {
     width: auto;
     text-align: center;
     overflow: hidden;
-
+    position: sticky;
     display: flex;
     justify-content: center;
 }
