@@ -211,7 +211,13 @@ header .block-div {
 
 }
 
-.skill-item p {
+.language-item {
+    background-color: rgba(224, 224, 224, .1);
+    margin: 1%;
+    padding: 2%;
+}
+
+.skill-item p , .language-item p{
     color: rgba(255, 255, 255, 0.51);
 }
 

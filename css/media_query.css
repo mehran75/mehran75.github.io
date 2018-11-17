@@ -51,4 +51,11 @@
         width: 100%;
     }
 
+
+    .language-item{
+        margin: 2%;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
 }
