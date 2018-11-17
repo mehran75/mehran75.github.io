@@ -1,31 +1,24 @@
-@media screen and (max-width: 600px) {
-    .nav a:not(:first-child) {display: none;}
-    .nav a.icon {
-        float: right;
-        display: block;
-    }
-}
 
-@media screen and (max-width: 600px) {
-    .nav.responsive {position: relative;}
-    .nav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .nav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
+
+/*@media screen and (max-width: 600px) {*/
+    /*.nav.responsive {position: relative;}*/
+    /*.nav.responsive .icon {*/
+        /*position: absolute;*/
+        /*right: 0;*/
+        /*top: 0;*/
+    /*}*/
+    /*.nav.responsive a {*/
+        /*float: none;*/
+        /*display: block;*/
+        /*text-align: left;*/
+    /*}*/
+/*}*/
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #424242;
     background-image: url("../img/header_img.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -51,36 +44,39 @@ header {
 
 
 
-#nav {
+.nav {
     min-height: 48px;
-    width: auto;
+    width: 100%;
     text-align: center;
     overflow: hidden;
+    top: 0;
+    position: fixed;
+    background-color: #424242;
 
     display: flex;
     justify-content: center;
 }
 
-#nav a {
+.nav a {
     color: white;
     text-decoration: none;
 
     margin: 1%;
 }
 
-#nav a:hover {
+a:hover {
     color: #26C6DA;
 }
 
 
 .active {
+    /*background-color: #26C6DA;*/
     color: #26C6DA;
 }
 
 .nav .icon {
     display: none;
 }
-
 /*Profile Image*/
 
 #profile-image {
@@ -229,3 +225,44 @@ footer {
 }
 
 
+
+
+/*Media Queries*/
+
+@media screen and (max-width: 600px) {
+    .nav a {display: none;}
+
+    .nav a.icon {
+        float: right;
+        display: block;
+        font-size: 200%;
+        margin-bottom: 2%;
+        color: #26C6DA;
+    }
+
+
+    .nav {
+        background-color: transparent;
+        justify-content: flex-end;
+    }
+
+    .nav.responsive {
+        background-color: #424242;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    
+    .nav.responsive .icon {
+        align-self: flex-end;
+    }
+
+    .nav.responsive a {
+        display: flex;
+        align-self: center;
+    }
+
+
+}

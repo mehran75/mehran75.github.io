@@ -11,24 +11,26 @@
     <link rel="stylesheet" href="css/main_style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="shortcut icon" href="img/university.png" >
+    <link rel="shortcut icon" href="img/university.png">
 
 </head>
 <body>
 
 <header id="home">
 
-    <nav>
+    <nav class="navigation">
 
         <div class="nav" id="nav">
+
+
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#skill">Skills</a>
             <a href="#employment">Employment</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+
         </div>
 
 
@@ -47,11 +49,11 @@
             and learn more <a class="smoothscroll" href="#about">about me</a>.</h4>
 
         <ul class="social">
-            <li><a href="#"><i class="fa fa-github"  style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-github" style="font-size: 24px;"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter" style="font-size: 24px;"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"  style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus" style="font-size: 24px;"></i></a></li>
             <li><a href="#"><i class="fa fa-linkedin" style="font-size: 24px;"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"  style="font-size: 24px;"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" style="font-size: 24px;"></i></a></li>
         </ul>
     </div>
 
@@ -71,18 +73,16 @@
         Hi, I'm Mehran.<br>
         I am a student and study Computer Engineering(Software) at Guilan university.
         first I learned C++ at first year at university and then choose to code with Java.
-        So I learned  how to write code with Java language.
+        So I learned how to write code with Java language.
         I've developed a pretty huge chatting software by myself
-        for about 2 years with java (Desktop with JavaFX,Mobile with Android Studio and a SocketServer) and It's working grate.
+        for about 2 years with java (Desktop with JavaFX,Mobile with Android Studio and a SocketServer) and It's working
+        grate.
         <br>
         But currently I've began learning AI because I love this field and It's the future of everything.
     </p>
 
 
-
-
 </div>
-
 
 
 <!--Education-->
@@ -93,36 +93,35 @@
 
     <div class="ul-div">
 
-            <div class="education-item" id="university">
-                <img src="img/university.png">
+        <div class="education-item" id="university">
+            <img src="img/university.png">
 
-                <div class="education-item-content">
+            <div class="education-item-content">
 
-                    <h3>University of Guilan</h3>
+                <h3>University of Guilan</h3>
 
-                    <p>Computer engineering (Software)</p>
-                    <p>2015-2019</p>
-                </div>
+                <p>Computer engineering (Software)</p>
+                <p>2015-2019</p>
             </div>
+        </div>
 
         <hr/>
 
-            <div class="education-item" id="school">
-                <img src="img/school.jpg">
+        <div class="education-item" id="school">
+            <img src="img/school.jpg">
 
-                <div class="education-item-content">
+            <div class="education-item-content">
 
-                    <h3>Shahid Rajaee in Astaneh-ye-Ashrafieh</h3>
+                <h3>Shahid Rajaee in Astaneh-ye-Ashrafieh</h3>
 
-                    <p>Mathematics and Physics</p>
-                    <p>2011-2015</p>
-                </div>
+                <p>Mathematics and Physics</p>
+                <p>2011-2015</p>
             </div>
+        </div>
     </div>
 
 
 </div>
-
 
 
 <!--Skill-->
@@ -167,7 +166,6 @@
     </div>
 
 
-
     <div class="skill-item">
         <h4>NLP</h4>
         <progress value="30" max="100"></progress>
@@ -178,10 +176,7 @@
     </div>
 
 
-
-
 </div>
-
 
 
 <!--Employment-->
@@ -214,8 +209,6 @@
     </div>
 
 
-
-
 </div>
 
 
@@ -224,19 +217,16 @@
 </footer>
 
 
-
-
-<!-- Java Script
-================================================== -->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<!--<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>-->
-<!--<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>-->
-
-<!--<script src="js/jquery.flexslider.js"></script>-->
-<!--<script src="js/waypoints.js"></script>-->
-<!--<script src="js/jquery.fittext.js"></script>-->
-<!--<script src="js/magnific-popup.js"></script>-->
-<!--<script src="js/init.js"></script>-->
-
+<!-- Java Script-->
+<script>
+    function myFunction() {
+        var x = document.getElementById("nav");
+        if (x.className === "nav") {
+            x.className += " responsive";
+        } else {
+            x.className = "nav";
+        }
+    }
+</script>
 </body>
 </html>
