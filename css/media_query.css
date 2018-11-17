@@ -37,4 +37,18 @@
     }
 
 
+    .skill-item-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    /*Skill item*/
+    .skill-item {
+
+        align-items: center;
+        margin: 2%;
+        width: 100%;
+    }
+
 }
