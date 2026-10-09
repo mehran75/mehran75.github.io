@@ -1,318 +1,508 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mehran Rafiee</title>
-    <meta name="description" content="Mehran rafiee resume">
-    <meta name="author" content="Mehran rafiee">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mehran Rafiee</title>
+<meta name="description" content="Mehran Rafiee — Lead Software Engineer in Helsinki. Cloud architecture, backend systems and production AI.">
+<meta property="og:title" content="Mehran Rafiee — Lead Software Engineer">
+<meta property="og:description" content="Cloud architecture, backend systems and production AI. Helsinki, Finland.">
+<meta property="og:image" content="https://mehran75.github.io/img/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4F3;
+  --surface:#FFFFFF;
+  --ink:#16202A;
+  --muted:#5A6873;
+  --rule:#CBD3D8;
+  --accent:#0E6B70;
+  --accent-soft:#D3E7E6;
+  --edu:#8A97A1;
+  --maxw:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141B21; --surface:#1B242C; --ink:#E7ECEE; --muted:#9AA8B2;
+    --rule:#2E3A44; --accent:#5CC3C0; --accent-soft:#1F3A3D; --edu:#6B7A85;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+/* nav */
+header.top{border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:16px}
+.mark{font-weight:800;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+@media (max-width:640px){nav ul li:not(.keep){display:none}}
 
-    <link rel="stylesheet" href="css/main_style.css"/>
-    <link rel="stylesheet" href="css/media_query.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="shortcut icon" href="img/university.png">
+/* hero */
+.wrap.hero{padding-top:72px;padding-bottom:40px}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+h1{font-size:clamp(48px,9vw,112px);line-height:.92;letter-spacing:-.035em;font-weight:800;margin:0}
+.role{font-size:clamp(19px,2.2vw,24px);margin:22px 0 0;max-width:34ch;color:var(--ink)}
+.role span{color:var(--muted)}
+.portrait{width:148px;height:148px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:1px solid var(--rule)}
+@media (max-width:640px){.wrap.hero{padding-top:40px;padding-bottom:28px}.hero-grid{grid-template-columns:1fr}.portrait{width:96px;height:96px;order:-1}}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:15px}
+.links a{color:var(--ink);font-weight:500}
+.btn{display:inline-block;background:var(--ink);color:var(--paper)!important;padding:9px 16px;border-radius:999px;text-decoration:none}
 
+/* career timeline: the one bold element */
+.career{margin:28px 0 8px;border-top:2px solid var(--ink);padding-top:18px}
+.career-head{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap;margin:0 0 14px}
+.career h2{font-size:15px;font-weight:500;color:var(--muted);margin:0}
+.range{display:inline-flex;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--surface)}
+.range button{font:inherit;font-size:13px;font-weight:500;border:0;background:transparent;color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.range button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.scroller{overflow-x:auto;scrollbar-width:thin;overscroll-behavior-x:contain;position:relative}
+.chart{position:relative;min-width:620px}
+.chart[data-view="full"]{min-width:760px}
+@media (max-width:700px){.chart{min-width:640px}.chart[data-view="full"]{min-width:1000px}}
+.row{display:flex;position:relative}
+.row+.row{border-top:1px solid color-mix(in srgb,var(--rule) 60%,transparent)}
+.lane-label{position:sticky;left:0;z-index:4;flex:0 0 96px;background:var(--paper);font-size:12.5px;font-weight:500;color:var(--ink);padding:24px 10px 0 0;display:flex;gap:7px;align-items:flex-start}
+.lane-label i{flex:0 0 8px;height:8px;margin-top:5px;border-radius:2px}
+.lane-label::after{content:"";position:absolute;top:0;bottom:0;right:-12px;width:12px;background:linear-gradient(90deg,var(--paper),transparent);pointer-events:none}
+@media (max-width:700px){.lane-label{flex-basis:84px}}
+.track{position:relative;flex:1;height:64px}
+.row.ticks .lane-label{padding:0}
+.row.ticks .track{height:28px}
+.grid{position:absolute;top:0;bottom:28px;left:96px;right:0;pointer-events:none}
+@media (max-width:700px){.grid{left:84px}}
+.gl{position:absolute;top:0;bottom:0;border-left:1px dashed color-mix(in srgb,var(--rule) 70%,transparent);transition:left .45s ease,opacity .3s}
+.nowline{position:absolute;top:0;bottom:0;border-left:1.5px solid var(--ink);z-index:3;transition:left .45s ease}
+.item{position:absolute;top:10px;height:44px;padding:0;border:0;background:transparent;font:inherit;text-align:left;color:var(--ink);cursor:pointer;transition:left .45s ease,width .45s ease,opacity .3s ease;border-radius:4px}
+.item .lbl{display:block;font-size:13px;font-weight:500;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px 0 1px;width:var(--lw,100%)}
+.item.clipped .lbl{visibility:hidden}
+.item .bar{display:block;margin-top:6px;height:12px;border-radius:3px;background:var(--accent);transition:height .15s,margin .15s}
+.item.side .bar{background:var(--accent-soft);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.item.edu .bar{background:repeating-linear-gradient(135deg,transparent 0 4px,color-mix(in srgb,var(--edu) 45%,transparent) 4px 5px);box-shadow:inset 0 0 0 1.5px var(--edu)}
+.item.edu .lbl{color:var(--muted)}
+.item.now .bar{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),rgba(0,0,0,.35));mask-image:linear-gradient(90deg,#000 calc(100% - 22px),rgba(0,0,0,.35))}
+.item.clipped .bar{border-top-left-radius:0;border-bottom-left-radius:0;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.25),#000 18px);mask-image:linear-gradient(90deg,rgba(0,0,0,.25),#000 18px)}
+.item.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.item:hover .bar{margin-top:4px;height:14px}
+.item[aria-pressed="true"] .lbl{color:var(--accent)}
+.item[aria-pressed="true"] .bar{margin-top:3px;height:16px;box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--ink)}
+.item.side[aria-pressed="true"] .bar{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 2px var(--paper),0 0 0 3.5px var(--ink)}
+.item.edu[aria-pressed="true"] .bar{box-shadow:inset 0 0 0 1.5px var(--edu),0 0 0 2px var(--paper),0 0 0 3.5px var(--ink)}
+.item:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.tick{position:absolute;top:7px;font-size:12px;color:var(--muted);transform:translateX(-50%);font-variant-numeric:tabular-nums;white-space:nowrap;transition:left .45s ease,opacity .3s}
+.tick.nowtick{color:var(--ink);font-weight:700}
+.tick.off{opacity:0}
+.detail{margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:start;padding:16px 18px;background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:4px;min-height:118px}
+.detail.side{border-left-color:color-mix(in srgb,var(--accent) 55%,var(--rule))}
+.detail.edu{border-left-color:var(--edu)}
+.detail .kicker{grid-column:1/-1;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.detail h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.detail .org{color:var(--accent);font-weight:500}
+.detail p{grid-column:1;margin:2px 0 0;max-width:66ch}
+.detail .more{grid-column:1;font-size:14px;font-weight:500;justify-self:start;margin-top:4px}
+.stepper{grid-column:2;grid-row:2/5;display:flex;gap:6px;align-self:center}
+.stepper button{width:38px;height:38px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font:inherit;font-size:17px;line-height:1;cursor:pointer}
+.stepper button:hover:not(:disabled){border-color:var(--ink)}
+.stepper button:disabled{opacity:.35;cursor:default}
+.hint{font-size:12px;color:var(--muted);margin:8px 0 0}
+@media (max-width:600px){.detail{grid-template-columns:1fr}.stepper{grid-column:1;grid-row:auto;margin-top:8px}.hint{display:none}}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--rule)}
+.sec{display:grid;grid-template-columns:200px 1fr;gap:32px}
+@media (max-width:800px){.sec{grid-template-columns:1fr;gap:12px}section{padding:44px 0}}
+.sec>h2{font-size:22px;letter-spacing:-.01em;margin:0;font-weight:700}
+.lede{font-size:21px;line-height:1.5;margin:0 0 18px;max-width:58ch}
+.body p{max-width:64ch;margin:0 0 14px;color:var(--ink)}
+
+.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border-top:1px solid var(--rule)}
+.focus div{padding:18px 20px 4px 0}
+.focus h3{font-size:16px;margin:0 0 6px}
+.focus p{font-size:15px;color:var(--muted);margin:0}
+@media (max-width:700px){.focus{grid-template-columns:1fr}}
+
+/* jobs */
+.job{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--rule);scroll-margin-top:24px}
+.job:last-child{border-bottom:0;margin-bottom:0}
+.job header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.job h3{font-size:20px;margin:0;letter-spacing:-.01em}
+.job .org{color:var(--accent);font-weight:500}
+.job time{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.job .where{font-size:14px;color:var(--muted);margin:2px 0 10px}
+.job p{margin:0 0 10px;max-width:64ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding:0;list-style:none}
+.tags li{font-size:13px;padding:2px 10px;border:1px solid var(--rule);border-radius:999px;color:var(--muted)}
+.job.flash{animation:flash 1.2s ease}
+@keyframes flash{0%{background:var(--accent-soft)}100%{background:transparent}}
+details.earlier summary{cursor:pointer;color:var(--accent);font-weight:500;margin-bottom:18px}
+details.earlier .job{margin-top:18px}
+
+
+/* freelance */
+.offer-lede{font-size:21px;line-height:1.5;margin:0 0 6px;max-width:48ch}
+.offer-sub{color:var(--muted);margin:0 0 26px;max-width:58ch}
+.offers{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.offers li{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:6px 28px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.offers h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.offers p{margin:0;color:var(--muted);max-width:56ch}
+@media (max-width:640px){.offers li{grid-template-columns:1fr}}
+.offer-cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.offer-cta span{color:var(--muted);font-size:15px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
+@media (max-width:640px){.skills{grid-template-columns:1fr}}
+.skills h3{font-size:16px;margin:0 0 8px}
+
+/* edu */
+.edu-item{margin-bottom:22px}
+.edu-item h3{font-size:18px;margin:0}
+.edu-item p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:6px 0;border-bottom:1px solid var(--rule);font-size:15px;display:flex;justify-content:space-between;gap:12px}
+ul.plain li span:last-child{color:var(--muted)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper);border-top:0}
+.contact .sec>h2{color:var(--paper)}
+.contact a{color:var(--paper)}
+.big-mail{font-size:clamp(24px,4vw,40px);font-weight:700;letter-spacing:-.02em;word-break:break-all}
+.contact p{color:color-mix(in srgb,var(--paper) 70%,transparent);max-width:52ch}
+footer{padding:22px 0;font-size:13px;color:var(--muted)}
+</style>
 </head>
 <body>
 
-<header id="home">
-
-    <nav class="navigation">
-
-        <div class="nav" id="nav">
-
-
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i></a>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skill">Skills</a>
-            <a href="#language">Languages</a>
-            <a href="#employment">Employment</a>
-            <a href="https://drive.google.com/open?id=1Ix-YOuavT09nAIQalPd2dOzWbZP9St5J">CV</a>
-
-        </div>
-
-
-    </nav>
-
-
-
-    <div class="block-div">
-
-        <img id="profile-image" src="img/my_img.jpg"/>
-
-        <h2 class="responsive-headline">Mehran Rafiee</h2>
-
-        <h4>This page is outdated, and I don't have time to keep it up-to-date. So, please review my <a href="https://drive.google.com/open?id=1Ix-YOuavT09nAIQalPd2dOzWbZP9St5J" target="_blank" >CV</a>.</h4>
-
-        <div class="social">
-            <a href="https://github.com/mehran75"><i class="fab fa-github" style="font-size: 24px;"></i></a>
-            <a href="https://kaggle.com/mehranrafiee"><i class="fab fa-kaggle" style="font-size: 24px;"></i></a>
-            <a href="https://www.linkedin.com/in/mehranrafiee97"><i class="fab fa-linkedin" style="font-size: 24px;"></i></a>
-            <a href="https://twitter.com/Mehranrafiee5"><i class="fab fa-twitter" style="font-size: 24px;"></i></a>
-            <a href="https://www.instagram.com/mehran97_r/"><i class="fab fa-instagram" style="font-size: 24px;"></i></a>
-            <a href="https://plus.google.com/100646127247674412807"><i class="fab fa-google-plus"
-                                                                       style="font-size: 24px;"></i></a>
-        </div>
-    </div>
-
-
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#">Mehran Rafiee</a>
+    <nav aria-label="Primary"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#freelance">Freelance</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li class="keep"><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
 </header>
 
+<main>
+<div class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <h1>Mehran<br>Rafiee</h1>
+      <p class="role">Lead Software Engineer in Helsinki. <span>I design cloud systems, build backends, and ship AI into production products.</span></p>
+      <div class="links">
+        <a class="btn" href="#freelance">Work with me</a>
+        <a href="https://www.linkedin.com/in/mehranar/">LinkedIn</a>
+        <a href="https://github.com/mehran75">GitHub</a>
+        <a href="mailto:mehranrafiee5@gmail.com">Email</a>
+      </div>
+    </div>
+    <img class="portrait" src="img/profile.jpg" alt="Portrait of Mehran Rafiee" width="148" height="148">
+  </div>
 
-<!--About-->
-<div class="block-div" id="about">
-
-    <h3 class="section-title">Know me better :)</h3>
-
-
-    <br/>
-
-    <p>
-        My programming life started in 2015 with the implementation of various programs from very small to relatively large apps with JAVA language. My first employment was in 2016 as an Android developer in a considerably large complex in Tehran. After that, I find my interest in AI and relatively Data science field, so this is where I started to learn and experience different algorithm of machine learning such as Linear Regression, SVM and different types of neural network. During this learning process, I also leaned and developed some Django based websites to cover living expenses. To recap, now I’m completely capable of doing machine learning researches and also always open to learning new stuff.
-        <br/>
-
-        But currently I've began learning AI because I love this field and It's the future of everything.
-        <br/>
-
-        This is not my full resume. I'll complete it as soon as I can.
-    </p>
-
-
+  <div class="career">
+    <div class="career-head">
+      <h2 id="tl-title">Career timeline</h2>
+      <div class="range" role="group" aria-label="Timeline range">
+        <button type="button" data-view="recent" aria-pressed="true">Since 2021</button>
+        <button type="button" data-view="full" aria-pressed="false">Full career</button>
+      </div>
+    </div>
+    <div class="scroller" role="group" aria-labelledby="tl-title"><div class="chart" id="chart" data-view="recent"></div></div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+    <p class="hint">Select a role for details. Arrow keys step through them.</p>
+  </div>
 </div>
 
-
-<!--Education-->
-<div class="block-div" id="education">
-
-    <h3 class="section-title">Education</h3>
-
-
-    <div class="ul-div">
-
-        <div class="education-item" id="university">
-            <img src="img/university.png">
-
-            <div class="education-item-content">
-
-                <h3>University of Guilan</h3>
-
-                <p>Computer engineering (Software)</p>
-                <p>2015-2019</p>
-            </div>
-        </div>
-
-        <hr/>
-
-        <div class="education-item" id="school">
-            <img src="img/school.jpg">
-
-            <div class="education-item-content">
-
-                <h3>Shahid Rajaee in Astaneh-ye-Ashrafieh</h3>
-
-                <p>Mathematics and Physics</p>
-                <p>2011-2015</p>
-            </div>
-        </div>
+<section id="about">
+  <div class="wrap sec">
+    <h2>About</h2>
+    <div class="body">
+      <p class="lede">Nearly a decade of building software, most recently leading a cloud team that puts AI agents into products used by the construction industry.</p>
+      <p>At Solibri I lead the cloud engineers working on BIM quality assurance: production API servers, distributed tracing, GDPR-compliant data pipelines, and an AI agent integrated into Solibri's main products. Before that I founded Farmoi, where I built the entire stack myself, from cloud infrastructure to the mobile apps.</p>
+      <p>My background is in machine learning (M.Sc. from Tampere University), and I care most about the space between engineering and business: turning fuzzy product goals into systems and roadmaps a team can actually deliver.</p>
+      <div class="focus">
+        <div><h3>Cloud architecture</h3><p>Scalable, observable systems on AWS and GCP.</p></div>
+        <div><h3>AI in production</h3><p>LLM agents with LangChain, graph data with Neo4j.</p></div>
+        <div><h3>Technical leadership</h3><p>Leading teams, mentoring, and shaping technical strategy.</p></div>
+      </div>
     </div>
+  </div>
+</section>
 
+<section id="experience">
+  <div class="wrap sec">
+    <h2>Experience</h2>
+    <div class="body">
+      <article class="job" id="j-lead">
+        <header><h3>Senior Software Engineer, Team Lead · <span class="org">Solibri</span></h3><time>Jan 2024 – present</time></header>
+        <div class="where">Helsinki</div>
+        <p>Lead a team of cloud software engineers building scalable BIM quality assurance solutions with cloud and AI technologies. Designed and built production API servers and introduced distributed tracing for observability and reliability.</p>
+        <p>Led the development and deployment of a production AI agent integrated into Solibri's main products, and made sure cloud services and data-processing workflows meet GDPR. Work closely with product and stakeholders, mentor engineers, and contribute to the company's technical strategy.</p>
+        <ul class="tags"><li>AWS</li><li>GCP</li><li>FastAPI</li><li>LangChain</li><li>Next.js</li><li>Neo4j</li></ul>
+      </article>
 
-</div>
+      <article class="job" id="j-farmoi">
+        <header><h3>Founder · <span class="org">Farmoi Oy</span></h3><time>Dec 2024 – Jun 2026</time></header>
+        <div class="where">Finland</div>
+        <p>Founded Farmoi, a service connecting local farmers directly with consumers. Ran every phase of the company, balancing business operations and product strategy with hands-on engineering. Architected and built the full stack, including cloud infrastructure and mobile apps, and launched across multiple regions.</p>
+        <ul class="tags"><li>Founder</li><li>Product</li><li>Mobile</li><li>Cloud</li></ul>
+      </article>
 
+      <article class="job" id="j-solibri">
+        <header><h3>Software Engineer · <span class="org">Solibri</span></h3><time>Oct 2021 – Jan 2024</time></header>
+        <div class="where">Helsinki</div>
+        <p>Built BIM quality assurance services in Go and Python. Took a leading role in mentoring junior developers and pairing cloud expertise with clear communication across the engineering team.</p>
+        <ul class="tags"><li>Go</li><li>Python</li><li>Cloud</li></ul>
+      </article>
 
-<!--Skill-->
-<div class="block-div" id="skill">
+      <article class="job" id="j-komodaa">
+        <header><h3>Software Engineer · <span class="org">Komodaa</span></h3><time>Apr 2021 – Aug 2021</time></header>
+        <div class="where">Shiraz, Iran</div>
+        <p>Built and deployed several microservices in under a month for a social e-commerce platform, speeding up feature releases.</p>
+        <ul class="tags"><li>Microservices</li><li>Agile</li></ul>
+      </article>
 
+      <article class="job" id="j-trialblaze">
+        <header><h3>Junior Software Engineer · <span class="org">TrialBlaze</span></h3><time>Sep 2019 – Feb 2021</time></header>
+        <div class="where">Australia (remote)</div>
+        <p>Integrated microservices with external systems for a clinical study management startup serving pharmaceutical companies, and took part in core system design.</p>
+        <ul class="tags"><li>Go</li><li>Docker</li><li>gRPC</li><li>Apache Pulsar</li><li>Linux</li></ul>
+      </article>
 
-    <h3 class="section-title">My skills</h3>
-
-    <div class="skill-item-container">
-
-
-        <div class="skill-item">
-            <h4>Machine learning</h4>
-            <!--<progress value="50" max="100"></progress>-->
-            <p>
-                KNN, Logestic regression, Artificial Neural network etc.
-            </p>
-        </div>
-        
-        
-        <div class="skill-item">
-            <h4>Nueral network</h4>
-            <!--<progress value="50" max="100"></progress>-->
-            <p>
-                ANN, CNN, RNN, frameworks(Tensorflow, keras, sikit-learn, etc).
-            </p>
-        </div>
-        
-          <div class="skill-item">
-            <h4>Python</h4>
-            <!--<progress value="70" max="100"></progress>-->
-
-            <p>
-                Numpy, Matplotlib, socket, Tensorflow, Socket, Django, etc.
-            </p>
-        </div>
-        
-        <div class="skill-item">
-            <h4>Java</h4>
-            <!--<progress value="80" max="100"></progress>-->
-
-            <p>
-                Java Se, JavaFx, etc.
-            </p>
-
-        </div>
-        
-        
-
-        <div class="skill-item">
-            <h4>Android</h4>
-            <!--<progress value="80" max="100"></progress>-->
-
-
-            <p>
-                Material design, Services, XML, SQLite, Socket, RecyclerView, Multi threading, etc.
-            </p>
-
-        </div>
-
-
-        <div class="skill-item">
-            <h4>SQL server</h4>
-            <p>Learned this for one of my projects. not a professional in it.</p>
-            <!--<progress value="60" max="100"></progress>-->
-
-        </div>
-
-
-        <div class="skill-item">
-            <h4>NLP</h4>
-            <!--<progress value="30" max="100"></progress>-->
-
-            <p>
-                know some Basics(bag of word, tf-idf, naive bayes, generative and descriminative models, etc),
-                but still learning and trying to make progress.
-            </p>
-        </div>
-
-
-        <div class="skill-item">
-            <h4>HTML&CSS</h4>
-            <p>learned for university courses.</p>
-            <!--<progress value="60" max="100"></progress>-->
-
-        </div>
-
-        <div class="skill-item">
-            <h4>VHDL</h4>
-            <p>learned for university courses but I'm not bad at it.</p>
-            <!--<progress value="60" max="100"></progress>-->
-
-        </div>
-
-        <div class="skill-item">
-            <h4>Linux-ubuntu</h4>
-            <p>like this os and of course open source community.</p>
-            <!--<progress value="60" max="100"></progress>-->
-
-        </div>
-
+      <details class="earlier">
+        <summary>Earlier roles, 2017–2019</summary>
+        <article class="job" id="j-freelance">
+          <header><h3>Python Developer · <span class="org">Freelance</span></h3><time>Aug 2017 – Sep 2019</time></header>
+          <p>Machine learning and deep learning solutions with Keras, scikit-learn, pandas and NumPy, plus web projects in Django.</p>
+        </article>
+        <article class="job" id="j-rahnet">
+          <header><h3>Software Engineer · <span class="org">Rahnet</span></h3><time>Feb 2017 – Nov 2018</time></header>
+          <div class="where">Tehran, Iran</div>
+          <p>Built an organisation-wide real-time messenger with one-to-one, group and broadcast messaging, owning the server, the Android app and a cross-platform desktop client. Multi-threading, socket programming, SQL Server and JavaFX.</p>
+        </article>
+        <article class="job" id="j-ta">
+          <header><h3>Teaching Assistant · <span class="org">University of Guilan</span></h3><time>Sep 2018 – Jul 2019</time></header>
+          <p>Computer-Aided Design and Advanced Computer Networks.</p>
+        </article>
+      </details>
     </div>
+  </div>
+</section>
 
-</div>
-
-<hr/>
-<!--Language-->
-<div class="block-div" id="language">
-
-    <h3 class="section-title">My languages</h3>
-
-    <!--Persian-->
-    <div class="language-item">
-        <h4 class="language-title">Persian</h4>
-
-        <P>Native</P>
+<section id="freelance">
+  <div class="wrap sec">
+    <h2>Build with Farmoi</h2>
+    <div>
+      <p class="offer-lede">From idea to production, without hiring a team.</p>
+      <p class="offer-sub">Through my company Farmoi Oy, I take on a small number of freelance projects alongside my work at Solibri. You talk to the engineer who builds it.</p>
+      <ul class="offers">
+        <li><h3>AI agents</h3><p>LLM agents that work on your data and tools, from first prototype to a production deployment with tracing and guardrails.</p></li>
+        <li><h3>Automation workflows</h3><p>Replace repetitive manual work with reliable pipelines that connect your apps, APIs and documents.</p></li>
+        <li><h3>Websites and web apps</h3><p>Fast, accessible sites and product front ends, built with Next.js and backed by an API when you need one.</p></li>
+        <li><h3>Mobile apps</h3><p>Cross-platform iOS and Android apps with React Native and Expo, using Firebase or your own backend.</p></li>
+        <li><h3>Technical assessments</h3><p>An independent review of your architecture, code or AI plans, with a written report and clear next steps. Useful before a launch, a hire or an investment.</p></li>
+        <li><h3>Backend and cloud</h3><p>APIs, data pipelines and cloud setup on AWS or GCP, designed to be observable and GDPR-ready.</p></li>
+      </ul>
+      <div class="offer-cta">
+        <a class="btn" href="mailto:mehranrafiee5@gmail.com?subject=Project%20with%20Farmoi">Tell me about your project</a>
+        <span>Don't see your case? Ask anyway.</span>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!--English-->
-    <div class="language-item">
-        <h4 class="language-title">English</h4>
-
-        <P>Fluent (Almost)</P>
+<section id="skills">
+  <div class="wrap sec">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Cloud &amp; infrastructure</h3><p>AWS, GCP, Firebase, Docker, Linux, distributed tracing, microservices, GDPR-compliant data processing</p></div>
+      <div><h3>Backend</h3><p>Python, Go, FastAPI, gRPC, Apache Pulsar, SQL, Neo4j</p></div>
+      <div><h3>AI &amp; machine learning</h3><p>LLM agents, LangChain, deep learning, Keras, scikit-learn, pandas, NumPy</p></div>
+      <div><h3>Frontend &amp; mobile</h3><p>React Native, Expo, Next.js, Android, JavaFX</p></div>
+      <div><h3>Leadership</h3><p>Team leading, mentoring, stakeholder management, technical roadmaps</p></div>
+      <div><h3>Languages</h3><p>English and Persian (native or bilingual), Finnish (limited working)</p></div>
     </div>
+  </div>
+</section>
 
-</div>
-
-
-<!--Employment-->
-<div class="block-div" id="employment">
-    <h3 class="section-title">I have some working history</h3>
-
-    <div class="employment-item education-item">
-        <img src="img/ammar_logo.jpg"/>
-
-        <div class="employment-item-content education-item-content">
-            <h3>Java Developer</h3>
-
-            <p>Rahnet</p>
-            <p>2017 - 2018</p>
-        </div>
+<section id="education">
+  <div class="wrap sec">
+    <h2>Education</h2>
+    <div class="two">
+      <div>
+        <div class="edu-item"><h3>M.Sc. Machine Learning &amp; Pattern Recognition</h3><p>Tampere University · 2021–2025</p></div>
+        <div class="edu-item"><h3>B.Sc. Computer Engineering</h3><p>University of Guilan · 2015–2019<br>Major in AI &amp; machine learning, minor in cloud software engineering</p></div>
+      </div>
+      <div>
+        <h3 style="font-size:16px;margin:0 0 8px">Certifications</h3>
+        <ul class="plain">
+          <li><span>Leadership Training, Solibri</span><span>2024</span></li>
+          <li><span>Self-Driving Cars Specialization, Coursera</span><span>2021</span></li>
+          <li><span>Deep Learning Specialization, Coursera</span><span>2020</span></li>
+          <li><span>Machine Learning, Coursera</span><span>2018</span></li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
 
-
-    <hr/>
-
-    <div class="employment-item education-item">
-        <img src="img/freelancer.png"/>
-
-        <div class="employment-item-content education-item-content">
-            <h3>Android Developer</h3>
-
-            <p>Freelancer</p>
-            <p>2016 - 2018</p>
-        </div>
+<section id="contact" class="contact">
+  <div class="wrap sec">
+    <h2>Contact</h2>
+    <div>
+      <a class="big-mail" href="mailto:mehranrafiee5@gmail.com">mehranrafiee5@gmail.com</a>
+      <p>Open to conversations about cloud and AI engineering, technical leadership, and interesting product ideas.</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/mehranar/">LinkedIn</a>
+        <a href="https://github.com/mehran75">GitHub</a>
+      </div>
     </div>
-    
-    <hr/>
+  </div>
+</section>
+</main>
 
-    <div class="employment-item education-item">
-        <img src="img/freelancer.png"/>
+<footer><div class="wrap">© <span id="yr">2026</span> Mehran Rafiee · Helsinki</div></footer>
 
-        <div class="employment-item-content education-item-content">
-            <h3>Django Developer</h3>
-
-            <p>Freelancer</p>
-            <p>2018 - 2019</p>
-        </div>
-    </div>
-</div>
-
-
-<footer>
-    <p>© Feel free to use</p>
-
-    <div class="contact-me">
-        <p>Mail: mehranrafiee5@gmail.com</p>
-    </div>
-</footer>
-
-
-<!-- JavaScript-->
 <script>
-    function myFunction() {
-        var x = document.getElementById("nav");
-        if (x.className === "nav") {
-            x.className += " responsive";
-        } else {
-            x.className = "nav";
-        }
-    }
+(function(){
+  var M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var now=new Date(), NOW=now.getFullYear()+now.getMonth()/12;
+  var END=Math.ceil(NOW+0.25), VIEWS={recent:2021,full:2015}, view="recent";
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function ym(a){return a[0]+(a[1]-1)/12;}
+  function fmt(a){return M[a[1]-1]+" "+a[0];}
+  function dur(s,e){var m=Math.round(((e?ym(e):NOW)-ym(s))*12)+(e?1:0);var y=Math.floor(m/12),r=m%12;return (y?y+" yr"+(y>1?"s":""):"")+(y&&r?" ":"")+(r?r+" mo":"");}
+  var lanes=[
+    {label:"Work",sw:"var(--accent)",items:[
+      {t:"Rahnet",role:"Software Engineer",org:"Rahnet",s:[2017,2],e:[2018,11],id:"j-rahnet",d:"Built an organisation-wide real-time messenger: server, Android app and desktop client."},
+      {t:"TrialBlaze",role:"Junior Software Engineer",org:"TrialBlaze",s:[2019,9],e:[2021,2],id:"j-trialblaze",d:"Microservice integrations for a clinical study platform, in Go with gRPC and Apache Pulsar."},
+      {t:"Komodaa",role:"Software Engineer",org:"Komodaa",s:[2021,4],e:[2021,8],id:"j-komodaa",d:"Shipped several microservices in under a month for a social e-commerce platform."},
+      {t:"Solibri · Engineer",role:"Software Engineer",org:"Solibri",s:[2021,10],e:[2024,1],id:"j-solibri",d:"BIM quality assurance services in Go and Python, and mentoring junior developers."},
+      {t:"Solibri · Team Lead",role:"Senior Software Engineer, Team Lead",org:"Solibri",s:[2024,1],e:null,id:"j-lead",d:"Leading the cloud team: production APIs, distributed tracing, GDPR compliance, and an AI agent shipped into Solibri's products."}
+    ]},
+    {label:"Alongside",sw:"var(--accent-soft);box-shadow:inset 0 0 0 1.5px var(--accent)",items:[
+      {t:"Freelance ML",role:"Python Developer",org:"Freelance",s:[2017,8],e:[2019,9],id:"j-freelance",c:"side",d:"Machine learning and deep learning projects, plus Django web work."},
+      {t:"Farmoi · Founder",role:"Founder",org:"Farmoi Oy",s:[2024,12],e:[2026,6],id:"j-farmoi",c:"side",d:"Built and ran a farm-to-consumer marketplace: the whole stack, from cloud to mobile apps."}
+    ]},
+    {label:"Study",sw:"transparent;box-shadow:inset 0 0 0 1.5px var(--edu)",items:[
+      {t:"B.Sc. Guilan",role:"B.Sc. Computer Engineering",org:"University of Guilan",s:[2015,9],e:[2019,6],go:"education",c:"edu",yearsOnly:true,d:"Major in AI and machine learning, minor in cloud software engineering."},
+      {t:"M.Sc. Tampere",role:"M.Sc. Machine Learning & Pattern Recognition",org:"Tampere University",s:[2021,9],e:[2025,5],go:"education",c:"edu",yearsOnly:true,d:"Graduate studies in machine learning, alongside full-time work at Solibri."}
+    ]}
+  ];
+  var chart=document.getElementById("chart"), detail=document.getElementById("detail");
+  var all=[], selected=null, grid=document.createElement("div"), ticksTrack, ticks=[], gls=[], nowlines=[], nowtick;
+  grid.className="grid";chart.appendChild(grid);
+  function row(label,sw,cls){
+    var r=document.createElement("div");r.className="row"+(cls?" "+cls:"");
+    var l=document.createElement("div");l.className="lane-label";
+    if(label)l.innerHTML='<i style="background:'+sw+'"></i>'+label;
+    r.appendChild(l);var t=document.createElement("div");t.className="track";r.appendChild(t);
+    chart.appendChild(r);return t;
+  }
+  lanes.forEach(function(l){
+    var tr=row(l.label,l.sw);
+    l.items.forEach(function(it,i){
+      it.S=ym(it.s);it.E=it.e?ym(it.e)+1/12:NOW;it.next=l.items[i+1]?ym(l.items[i+1].s):null;
+      var b=document.createElement("button");b.type="button";
+      b.className="item"+(it.c?" "+it.c:"")+(it.e?"":" now");
+      b.innerHTML='<span class="lbl">'+it.t+'</span><span class="bar"></span>';
+      b.title=it.role+" · "+it.org;b.setAttribute("aria-label",it.role+", "+it.org);b.setAttribute("aria-pressed","false");
+      b.addEventListener("click",function(){select(it);});
+      b.addEventListener("keydown",function(ev){
+        if(ev.key==="ArrowRight"||ev.key==="ArrowLeft"){ev.preventDefault();step(ev.key==="ArrowRight"?1:-1,true);}
+      });
+      it.b=b;tr.appendChild(b);all.push(it);
+    });
+    var n=document.createElement("div");n.className="nowline";tr.appendChild(n);nowlines.push(n);
+  });
+  all.sort(function(a,b){return a.S-b.S;});
+  ticksTrack=row("","","ticks");
+  for(var y=2015;y<END;y++){
+    var t=document.createElement("span");t.className="tick";t.textContent=y;t.dataset.y=y;ticksTrack.appendChild(t);ticks.push(t);
+    var g=document.createElement("div");g.className="gl";g.dataset.y=y;grid.appendChild(g);gls.push(g);
+  }
+  nowtick=document.createElement("span");nowtick.className="tick nowtick";nowtick.textContent="Now";ticksTrack.appendChild(nowtick);
+
+  function visible(){var S=VIEWS[view];return all.filter(function(it){return it.E>S+1/24;});}
+  function layout(){
+    var S=VIEWS[view], span=END-S, x=function(y){return Math.max(0,(y-S)/span*100);};
+    chart.dataset.view=view;
+    all.forEach(function(it){
+      var hide=it.E<=S+1/24, clip=it.S<S;
+      it.b.classList.toggle("hidden",hide);it.b.classList.toggle("clipped",clip&&!hide);
+      it.b.tabIndex=hide?-1:0;
+      var l=x(it.S), w=Math.max(x(it.E)-l,0.6);
+      it.b.style.left=l+"%";it.b.style.width="calc("+w+"% - 3px)";
+      // label may run past a short bar, up to the next item in the lane
+      var room=it.next?x(it.next)-l:100-l;
+      it.b.style.setProperty("--lw","calc("+(room/Math.max(w,0.01))*100+"% - 6px)");
+      it.b.style.overflow="visible";
+    });
+    var trackW=ticksTrack.clientWidth||800, pxPerYear=trackW/span;
+    ticks.forEach(function(t){var y=+t.dataset.y;t.style.left=x(y)+"%";var off=y<=S||Math.abs(y-NOW)<0.4||(pxPerYear<62&&y%2===1&&y<2021);t.classList.toggle("off",off);});
+    gls.forEach(function(g){var y=+g.dataset.y;g.style.left=x(y)+"%";g.style.opacity=y<=S?0:1;});
+    nowlines.forEach(function(n){n.style.left=x(NOW)+"%";});nowtick.style.left=x(NOW)+"%";
+    if(selected&&selected.b.classList.contains("hidden"))select(all.filter(function(i){return i.id==="j-lead";})[0]);
+    else if(selected)render(selected);
+  }
+  function render(it){
+    var vis=visible(), i=vis.indexOf(it);
+    var when=it.yearsOnly?it.s[0]+" – "+it.e[0]:fmt(it.s)+" – "+(it.e?fmt(it.e):"present")+" · "+dur(it.s,it.e);
+    var target=it.id||it.go;
+    detail.className="detail"+(it.c?" "+it.c:"");
+    detail.innerHTML='<span class="kicker">'+when+'</span><h3>'+it.role+' · <span class="org">'+it.org+'</span></h3>'+
+      '<p>'+it.d+'</p><a class="more" href="#'+target+'" data-target="'+target+'">'+(it.id?"Read the full role":"See education")+'</a>'+
+      '<div class="stepper"><button type="button" data-step="-1" aria-label="Previous entry"'+(i<=0?" disabled":"")+'>‹</button>'+
+      '<button type="button" data-step="1" aria-label="Next entry"'+(i>=vis.length-1?" disabled":"")+'>›</button></div>';
+  }
+  function select(it,focus){
+    if(selected)selected.b.setAttribute("aria-pressed","false");
+    selected=it;it.b.setAttribute("aria-pressed","true");render(it);
+    if(focus)it.b.focus({preventScroll:true});
+    reveal(it.b);
+  }
+  function reveal(b){
+    var sc=chart.parentNode, lab=96, bl=b.offsetLeft+b.parentNode.offsetLeft, br=bl+Math.min(b.offsetWidth,sc.clientWidth-lab-20);
+    if(bl<sc.scrollLeft+lab)sc.scrollTo({left:bl-lab-8,behavior:reduce?"auto":"smooth"});
+    else if(br>sc.scrollLeft+sc.clientWidth)sc.scrollTo({left:br-sc.clientWidth+16,behavior:reduce?"auto":"smooth"});
+  }
+  function step(d,focus){var vis=visible(),i=vis.indexOf(selected)+d;if(i>=0&&i<vis.length)select(vis[i],focus);}
+  detail.addEventListener("click",function(ev){
+    var s=ev.target.closest("[data-step]");if(s){step(+s.dataset.step);return;}
+    var a=ev.target.closest("a[data-target]");if(!a)return;ev.preventDefault();
+    var el=document.getElementById(a.dataset.target);var d=el.closest("details");if(d)d.open=true;
+    el.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+    el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash");
+  });
+  document.querySelectorAll(".range button").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      if(view===btn.dataset.view)return;view=btn.dataset.view;
+      document.querySelectorAll(".range button").forEach(function(o){o.setAttribute("aria-pressed",String(o===btn));});
+      layout();var sc=chart.parentNode;sc.scrollTo({left:view==="full"?0:sc.scrollWidth,behavior:reduce?"auto":"smooth"});
+    });
+  });
+  addEventListener("resize",layout);
+  select(all.filter(function(i){return i.id==="j-lead";})[0]);
+  layout();
+  var sc=chart.parentNode;sc.scrollLeft=sc.scrollWidth;
+  document.getElementById("yr").textContent=now.getFullYear();
+})();
 </script>
 </body>
 </html>
